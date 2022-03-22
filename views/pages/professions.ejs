@@ -1,0 +1,12 @@
+<%- include('../partials/header'); %>
+<main class="main container-fluid">
+	<h2><%= name %></h2>
+	<ul class="professons-list">
+		<% data.forEach(el => { %>
+			<li class="professions-list-item">
+				<%= el.long_name %>
+			</li>
+		<% }); %>
+	</ul>
+</main>
+<%- include('../partials/footer'); %>

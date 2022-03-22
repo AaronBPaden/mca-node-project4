@@ -3,6 +3,14 @@ const express = require('express');
 const router = express.Router();
 
 router.use(express.static('public'));
+router.use('/jobs', require('./api/professionsRoutes'));
+
+router.get('/', (req, res) => {
+	res.render('pages/home', {
+		title: "Medical Jobs'R'Us",
+		name: "The One-Stop Shop for Medical Jobs",
+	});
+});
 
 router.get('*', (req, res) => {
 	switch(req.url) {
